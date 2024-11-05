@@ -1,4 +1,8 @@
 //https://nitro.unjs.io/config
 export default defineNitroConfig({
-  srcDir: "server"
+  srcDir: "server",
+  runtimeConfig: {
+    apiKey: "",
+    assistantId: '',
+  }
 });
