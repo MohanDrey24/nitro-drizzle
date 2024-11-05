@@ -1,3 +1,7 @@
 export default defineEventHandler(async(event) => {
-  console.log("yawa", event)
+  // throw createError({
+  //   status: 409,
+  //   statusMessage: "Conflict",
+  //   message: "Email already exists",
+  // })
 })
