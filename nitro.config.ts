@@ -4,5 +4,5 @@ export default defineNitroConfig({
   runtimeConfig: {
     apiKey: "",
     assistantId: '',
-  }
+  },
 });
