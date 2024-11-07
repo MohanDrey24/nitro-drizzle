@@ -1,10 +1,9 @@
 import { usersTable } from "~~/src/db/schema"
 import db from "~~/src/index"
-
-type NewUser = typeof usersTable.$inferInsert;
+import { handleException } from "~~/plugins/handle-exception";
 
 export default defineEventHandler(async (event) => {
-  const { name, age, email } = await readBody(event) as NewUser;
+  const { name, age, email } = await readBody(event) as typeof usersTable.$inferInsert;
 
   try {
     await db.insert(usersTable).values({ 
@@ -15,14 +14,6 @@ export default defineEventHandler(async (event) => {
 
     return { message: "Data successfully inserted" };
   } catch (error) {
-    if (error.code === 'SQLITE_CONSTRAINT_UNIQUE') {
-      throw createError({
-        status: 409,
-        statusMessage: "Conflict",
-        message: "Email already exists",
-      });
-    };
-
-    throw error;
+    handleException(error)
   }
 })
