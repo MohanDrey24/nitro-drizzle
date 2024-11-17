@@ -7,16 +7,16 @@
     "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.27.0",
+    "drizzle-kit": "^0.28.1",
     "nitropack": "latest",
     "tsx": "^4.19.2"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.36.0",
-    "openai": "^4.71.0",
+    "drizzle-orm": "^0.36.3",
+    "openai": "^4.72.0",
     "zod": "^3.23.8"
   },
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+  "packageManager": "pnpm@9.13.2"
 }
